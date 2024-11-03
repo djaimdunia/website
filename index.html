@@ -292,7 +292,7 @@ borders: top right bottom left !important
 
             // Memastikan status API sukses
             if (data.statusCode === 200) {
-                const hargaEmas24Karat = data.data.current.sell; // Ambil midPrice dari response
+                const hargaEmas24Karat = data.data.current.buy; // Ambil midPrice dari response
                 const hargaSetelahDiskon = hargaEmas24Karat * 0.90; // Mengurangi harga dengan 5%
 
                 // Kadar dan persentase kemurnian emas
