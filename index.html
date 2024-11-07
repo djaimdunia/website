@@ -293,7 +293,7 @@ borders: top right bottom left !important
             // Memastikan status API sukses
             if (data.statusCode === 200) {
                 const hargaEmas24Karat = data.data.current.buy; // Ambil midPrice dari response
-                const hargaSetelahDiskon = hargaEmas24Karat * 0.92; // Mengurangi harga dengan 5%
+                const hargaSetelahDiskon = hargaEmas24Karat * 0.85; // Mengurangi harga dengan 5%
 
                 // Kadar dan persentase kemurnian emas
                 const karatList = [
@@ -321,7 +321,7 @@ borders: top right bottom left !important
                 const tableBody = document.getElementById("goldPriceTable");
                 tableBody.innerHTML = ""; // Kosongkan isi tabel sebelum menambahkan data baru
                 karatList.forEach(item => {
-                    const harga = Math.floor((hargaSetelahDiskon * item.purity) / 5000) * 5000; // Pembulatan ke bawah dengan kelipatan 5000
+                    const harga = Math.floor((hargaSetelahDiskon * item.purity) / 5000) * 5000 + 5000; // Pembulatan ke bawah dengan kelipatan 5000
                     const hargaFormatted = harga.toLocaleString('id-ID'); // Format dengan pemisah ribuan
                     const row = `<tr style="height: 34px;">
                                     <td class="u-border-1 u-border-palette-5-dark-2 u-first-column u-table-cell">${item.karat}K</td>
